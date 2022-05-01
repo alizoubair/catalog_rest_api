@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: alizoubaircatalogrestapi 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alizoubaircatalogrestapi
+  template:
+    metadata:
+      labels:
+        app: alizoubaircatalogrestapi 
+    spec:
+      containers:
+        - name: alizoubaircatalogrestapi 
+          image: restapicr.azurecr.io/alizoubaircatalogrestapi
+          ports:
+          - containerPort: 8080
